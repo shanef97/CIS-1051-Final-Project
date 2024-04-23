@@ -2,15 +2,15 @@
 
 #### Your name
 
-TODO
+Shane Ferrell
 
 #### Your section leader's name
 
-TODO
+Elmira Talebianaraki
 
 #### Project title
 
-TODO
+Cherry Eats - Temple University Food Truck Guide
 
 ***
 
@@ -18,12 +18,12 @@ Short answers for the below questions suffice. If you want to alter your plan fo
 
 #### What have you done for your project so far?
 
-TODO
+I hae built the basic "skeleton" for my project - pages, page sections, and basic styling - with HTML and CSS.
 
 #### What have you not done for your project yet?
 
-TODO
+I still need to build the "guts" of my website - that is, the content, the Python scripts, and some more styling.
 
 #### What problems, if any, have you encountered?
 
-TODO
+Getting to learn Flask has been a bit of a learning curve, but no problems otherwise.
