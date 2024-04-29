@@ -1,6 +1,19 @@
 from flask import Blueprint, render_template, redirect, url_for, request
+from app import app
+from flask_mail import Mail, Message
 
 views = Blueprint(__name__, "views")
+
+mail = Mail(app)
+
+app.config.update(dict(
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 465,
+    MAIL_USE_TLS = False,
+    MAIL_USE_SSL = True,
+    MAIL_USERNAME = 'ferrellshane470@gmail.com',
+    MAIL_PASSWORD = "b8wja'tQ13.0"
+))
 
 @views.route("/")
 def home():
@@ -23,11 +36,13 @@ def foodtrucks():
 @views.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method=="POST":
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
-        with open('feedback.txt', 'a') as f:
-            f.write(f'Name: {name}, Email: {email}, Message: {message}\n')
+        name = request.form.get['name']
+        email = request.form.get['email']
+        message = request.form.get['message']
+        msg = Message('Test', sender='mymail@mail.com', recipients=['mymai@mail.com'])
+        msg.body = "Contact form submitted with data:\n\nName: {}\n\nE-mail: {}\n\nMessage: {}".format(name, email, message)
+        mail.send(msg)
+
         return render_template('thankyou.html')
     else:
         return render_template("contact.html")

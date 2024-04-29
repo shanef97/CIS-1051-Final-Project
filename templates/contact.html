@@ -20,7 +20,7 @@
     </div>
     <br>
     <div class="container">
-    <form name="feedback-form" id="feedback-form">
+    <form name="feedback-form" id="feedback-form" action="{{url_for('views.contact')}}" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name..">
         <br>
@@ -30,7 +30,7 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" placeholder="Write your message.." style="height: 200px;"></textarea>
         <br>
-        <input type="button" value="Submit"></input>
+        <button type="submit" value="Submit"></button>
     </form>
     </div>
 {% endblock %}
