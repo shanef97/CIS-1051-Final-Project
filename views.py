@@ -15,7 +15,7 @@ def about():
 def reviews():
     return render_template("reviews.html")
 
-@views.route(".foodtrucks")
+@views.route("/foodtrucks")
 def foodtrucks():
     return render_template("foodtrucks.html")
 

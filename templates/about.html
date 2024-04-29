@@ -7,6 +7,21 @@
     {% block title %}About Cherry Eats{% endblock %}
 </head>
 <body>
-    
+    {% block content %}
+    <div class="content">
+        <br>
+        <h1>About Us</h1>
+        <br>
+        <p>Cherry Eats is a student-run blog focused on food trucks and restaurants on and around Temple Univeristy's campus. 
+            Covering everything from humble food carts to full-scale restaurants, we aim to give students and local residents 
+            a curated list of the best food in the Temple area.</p>
+        <p>Temple is among the best universities in the nation in terms of its food scene, and new food trucks and restaurants
+            are constantly being opened and reviewed by our team. Make Cherry Eats your trusted advisor for all things Temple food related! </p>
+        <br>
+        <a href="{{url_for('views.contact')}}">
+        <input type="button" value="Contact Us">
+        </a>
+    </div>
+    {% endblock %}
 </body>
 </html>
