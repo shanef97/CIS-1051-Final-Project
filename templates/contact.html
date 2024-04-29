@@ -8,10 +8,13 @@
     {% endblock %}
 </head>
 <body>
+<div class="header" style="text-align: center;">
 {% block content %}
     <h1> Have a restaurant or food truck you want us to review?</h1>
     <h1> Contact Us!</h1>
+</div>
     <br>
+    <div class="content">
     <form name="feedback-form" id="feedback-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -21,6 +24,7 @@
         <input type="text" id="message" name="message" rows="5" required>
         <button type="submit">Submit</button>
     </form>
+    </div>
 {% endblock %}
 </body>
 </html>
