@@ -11,6 +11,16 @@
     <div class="header" style="text-align: center;" ><h1>Welcome to Cherry Eats!</h1>
         <img src="{{url_for('static', filename='foodtrucks.jpg')}}"/>
     </div>
+    <br>
+    <a href="{{url_for('views.reviews')}}">
+    <input type="button" value="Recent Reviews">
+    </a>
+    <br>
+    <a href="{{url_for('views.about')}}">
+    <input type="button" value="About Us">
+    </a>
+    <br>
+    <br>
     {% endblock %}
 </body>
 </html>
