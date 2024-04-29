@@ -15,6 +15,11 @@ def about():
 def reviews():
     return render_template("reviews.html")
 
+@views.route(".foodtrucks")
+def foodtrucks():
+    return render_template("foodtrucks.html")
+
+
 @views.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method=="POST":
