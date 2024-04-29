@@ -1,13 +1,13 @@
+{% extends "navbarandlogo.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Have a restaurant or food truck in the Temple area that you want us to review?</title>
-    <title>Contact Us!</title>
+    {% block title %}Have a restaurant or food truck in the Temple area that you want us to review?{% endblock %}
 </head>
 <body>
-    
+{% block content %}
     <form name="feedback-form" id="feedback-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -17,5 +17,6 @@
         <input type="text" id="message" name="message" rows="5" required>
         <button type="submit">Submit</button>
     </form>
+{% endblock %}
 </body>
 </html>
