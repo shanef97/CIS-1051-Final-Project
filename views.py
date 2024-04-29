@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, request
 
 views = Blueprint(__name__, "views")
 
@@ -14,9 +14,17 @@ def go_home():
 def about():
     return render_template("about.html")
 
-@views.route("/contact")
+@views.route("/contact", methods=["GET", "POST"])
 def contact():
-    return render_template("contact.html")
+    if request.method=="POST":
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        with open('feedback.txt', 'a') as f:
+            f.write(f'Name: {name}, Email: {email}, Message: {message}\n')
+        return render_template('thankyou.html')
+    else:
+        return render_template("contact.html")
 
 @views.route("/reviews")
 def reviews():
