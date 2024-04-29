@@ -1,69 +1,16 @@
+{% extends "navbarandlogo.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    {% block title %}Welcome to Cherry Eats{% endblock %}
 </head>
 <body>
-    <style>
-        .header
-        {
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 25px;
-        }
-        
-        .navigation-bar ul
-        {
-            padding: 0;
-            margin: 0;
-            height: auto;
-            width: 100%;  
-            text-align: center;
-            display: flex;  
-            justify-content: center; 
-            vertical-align: top;
-        }
-
-        ul 
-        {
-            list-style-type: none;
-             margin: 0;
-             padding: 0;
-             overflow: hidden;
-             background-color:darkred;
-        }
-
-        li 
-        {
-            float: left;
-        }
-
-        li a 
-        {
-            display: block;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: medium;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-    </style>
-       <div class="navigation-bar">
-            <img src="{{ url_for('static', filename='Eats.png') }}" alt="Cherry Eats logo" height="100px" width="300px"/>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="{{url_for('views.reviews')}}">Reviews</a></li>
-                <li><a href="{{url_for('views.foodtrucks')}}">Food Truck Index</a></li>
-                <li><a href="{{url_for('views.contact')}}">Contact</a></li>
-                <li><a href="{{url_for('views.about')}}">About</a></li>
-            </ul>
-        </div>
-        <br>
+    {% block content %}
     <div class="header" style="text-align: center;" ><h1>Welcome to Cherry Eats!</h1>
         <img src="{{url_for('static', filename='foodtrucks.jpg')}}"/>
     </div>
+    {% endblock %}
 </body>
 </html>
