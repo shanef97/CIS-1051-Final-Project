@@ -12,6 +12,7 @@
         <img src="{{url_for('static', filename='foodtrucks.jpg')}}"/>
     </div>
     <br>
+    <div class="container">
     <a href="{{url_for('views.reviews')}}">
     <input type="button" value="Recent Reviews">
     </a>
@@ -19,6 +20,7 @@
     <a href="{{url_for('views.about')}}">
     <input type="button" value="About Us">
     </a>
+    </div>
     <br>
     <br>
     {% endblock %}
