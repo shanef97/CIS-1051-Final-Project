@@ -10,17 +10,6 @@ def home():
 def about():
     return render_template("about.html")
 
-@views.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method=="POST":
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
-        with open('feedback.txt', 'a') as f:
-            f.write(f'Name: {name}, Email: {email}, Message: {message}\n')
-        return render_template('thankyou.html')
-    else:
-        return render_template("contact.html")
 
 @views.route("/reviews")
 def reviews():
