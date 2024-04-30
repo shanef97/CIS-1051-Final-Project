@@ -108,7 +108,13 @@
             color: white;
             font-family: Arial, Helvetica, sans-serif;
         }
+        .fixed-to-top{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
     </style>
+    <div class="fixed-to-top">
        <div class="navigation-bar">
             <img src="{{ url_for('static', filename='Eats.png') }}" alt="Cherry Eats logo" height="100px" width="300px"/>
             <ul>
@@ -119,6 +125,7 @@
                 <li><a href="{{url_for('views.about')}}">About</a></li>
             </ul>
         </div>
+    </div>
         {% block content %}{% endblock %}
         <footer>
             <p>Cherry Eats 2024</p>
